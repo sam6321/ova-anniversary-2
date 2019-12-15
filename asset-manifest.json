@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/ova-anniversary-2/static/css/main.a0598572.chunk.css",
-    "main.js": "/ova-anniversary-2/static/js/main.22c572e2.chunk.js",
-    "main.js.map": "/ova-anniversary-2/static/js/main.22c572e2.chunk.js.map",
+    "main.css": "/ova-anniversary-2/static/css/main.624561f5.chunk.css",
+    "main.js": "/ova-anniversary-2/static/js/main.2d835c21.chunk.js",
+    "main.js.map": "/ova-anniversary-2/static/js/main.2d835c21.chunk.js.map",
     "runtime-main.js": "/ova-anniversary-2/static/js/runtime-main.41894dba.js",
     "runtime-main.js.map": "/ova-anniversary-2/static/js/runtime-main.41894dba.js.map",
     "static/js/2.a114669a.chunk.js": "/ova-anniversary-2/static/js/2.a114669a.chunk.js",
     "static/js/2.a114669a.chunk.js.map": "/ova-anniversary-2/static/js/2.a114669a.chunk.js.map",
     "index.html": "/ova-anniversary-2/index.html",
-    "precache-manifest.a3b0a4f435cf661185afdb6384b1d728.js": "/ova-anniversary-2/precache-manifest.a3b0a4f435cf661185afdb6384b1d728.js",
+    "precache-manifest.b009a304c58b6891f7fe4a180ab82293.js": "/ova-anniversary-2/precache-manifest.b009a304c58b6891f7fe4a180ab82293.js",
     "service-worker.js": "/ova-anniversary-2/service-worker.js",
-    "static/css/main.a0598572.chunk.css.map": "/ova-anniversary-2/static/css/main.a0598572.chunk.css.map"
+    "static/css/main.624561f5.chunk.css.map": "/ova-anniversary-2/static/css/main.624561f5.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.41894dba.js",
     "static/js/2.a114669a.chunk.js",
-    "static/css/main.a0598572.chunk.css",
-    "static/js/main.22c572e2.chunk.js"
+    "static/css/main.624561f5.chunk.css",
+    "static/js/main.2d835c21.chunk.js"
   ]
 }
