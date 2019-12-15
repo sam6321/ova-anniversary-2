@@ -392,7 +392,7 @@ export default class App extends React.Component<{}, AppState> {
             let iterations = 0;
             do {
                 const theta = THREE.Math.randFloat(-2 * Math.PI, 2 * Math.PI);
-                const radius = THREE.Math.randFloat(125, 200);
+                const radius = THREE.Math.randFloat(110, 150);
                 const phi = Math.PI / 2;
                 position.setFromSphericalCoords(radius, phi, theta);
                 iterations++;
@@ -447,7 +447,7 @@ export default class App extends React.Component<{}, AppState> {
                 const enemy = this.updateList.create(Enemy, tempVec1.set(0, 0, 100), this.loadedTextures.get("/deelon_darker.png") as THREE.Texture, this.player, this.labelDiv as HTMLDivElement, this.nodes, {
                     quotes: ["", ""],
                     boss: true,
-                    health: 600,
+                    health: 1200,
                     switchAttacks: true,
                     switchAttackTime: new Range(5, 10),
                     startingAttack: AttackMode.Round,
