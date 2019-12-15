@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4cb010883b733162500f2b23e118a0b3",
+    "revision": "e2b3a0bbc6eb087201ffe52c3f83b49f",
     "url": "/ova-anniversary-2/index.html"
   },
   {
-    "revision": "a7e134f4de4cb783a863",
+    "revision": "3f1bd7ae5641fe1223d8",
     "url": "/ova-anniversary-2/static/css/main.624561f5.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ova-anniversary-2/static/js/2.a114669a.chunk.js"
   },
   {
-    "revision": "a7e134f4de4cb783a863",
-    "url": "/ova-anniversary-2/static/js/main.2d835c21.chunk.js"
+    "revision": "3f1bd7ae5641fe1223d8",
+    "url": "/ova-anniversary-2/static/js/main.efd3228c.chunk.js"
   },
   {
     "revision": "49d80b3a9533a843e1a0",

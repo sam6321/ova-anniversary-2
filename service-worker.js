@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ova-anniversary-2/precache-manifest.b009a304c58b6891f7fe4a180ab82293.js"
+  "/ova-anniversary-2/precache-manifest.3a9e58d208eafaade69b5840ca755838.js"
 );
 
 self.addEventListener('message', (event) => {
