@@ -509,6 +509,9 @@ export class Enemy extends Update {
 
         if(this.switchAttacks && time > this.nextSwitchAttack) {
             this.attackMode = THREE.Math.randInt(0, AttackMode.Length - 1);
+            if(this.attackMode === AttackMode.RandomLength) {
+                this.attackMode = AttackMode.Round;
+            }
             this.nextSwitchAttack = time + this.switchAttackTime.random() * (this.boss ? 1.25 - (this.health / this.startHealth) : 1);
         }
 
