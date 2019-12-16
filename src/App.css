@@ -53,6 +53,7 @@ body {
 
 .loading-overlay-done {
   pointer-events: none;
+  user-select: none;
 }
 
 .loading-overlay-loaded {

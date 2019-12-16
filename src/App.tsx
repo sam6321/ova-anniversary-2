@@ -63,7 +63,7 @@ interface AppState {
 
 const people = [
     {
-        img: "/tyler_darker.png",
+        img: "tyler_darker.png",
         quotes: [
             "I’d be glad that OVA lasted",
             "Take this moment to say thank you",
@@ -76,7 +76,7 @@ const people = [
         message: <Tyler/>
     },
     {
-        img: "/cal_darker.png",
+        img: "cal_darker.png",
         quotes: [
             "Ups and downs",
             "Notable events",
@@ -88,7 +88,7 @@ const people = [
         message: <Cal/>
     },
     {
-        img: "/aeg_darker.png",
+        img: "aeg_darker.png",
         quotes: [
             "A years worth of memories",
             "Stay for good",
@@ -99,7 +99,7 @@ const people = [
         message: <Aegwynn/>
     },
     {
-        img: "/any_darker.png",
+        img: "any_darker.png",
         quotes: [
             "Hi it's me, any key",
             "I can't help but feel amazed",
@@ -112,7 +112,7 @@ const people = [
         message: <AnyKey13/>
     },
     {
-        img: "/blocky_darker.png",
+        img: "blocky_darker.png",
         quotes: [
             "Having fun no matter what",
             "You guys were always there",
@@ -124,7 +124,7 @@ const people = [
         message: <Blocky/>
     },
     {
-        img: "/dash_darker.png",
+        img: "dash_darker.png",
         quotes: [
             "Charming place",
             "I love all of you",
@@ -134,7 +134,7 @@ const people = [
         message: <Dash/>
     },
     {
-        img: "/mark_darker.png",
+        img: "mark_darker.png",
         quotes: [
             "Not much has changed",
             "Our community is steady",
@@ -147,7 +147,7 @@ const people = [
         message: <Mark/>
     },
     {
-        img: "/mute_darker.png",
+        img: "mute_darker.png",
         quotes: [
             "Alright fellas listen up",
             "Gonna fucking wing it",
@@ -159,7 +159,7 @@ const people = [
         message: <Mute/>
     },
     {
-        img: "/neel_darker.png",
+        img: "neel_darker.png",
         quotes: [
             "yo",
             "SL",
@@ -171,7 +171,7 @@ const people = [
         message: <Neel/>
     },
     {
-        img: "/snow_darker.png",
+        img: "snow_darker.png",
         quotes: [
             "You all are special & dear to me",
             "lol akjdslksdf",
@@ -183,7 +183,7 @@ const people = [
         message: <Snow/>
     },
     {
-        img: "/sticky_darker.mp4",
+        img: "sticky_darker.mp4",
         quotes: [
             "",
             ""
@@ -191,7 +191,7 @@ const people = [
         message: <Sticky/>
     },
     {
-        img: "/supa_darker.png",
+        img: "supa_darker.png",
         quotes: [
             "Y’all are fucking great",
             "Best damn friends",
@@ -203,7 +203,7 @@ const people = [
         message: <Supa/>
     },
     {
-        img: "/vase_darker.png",
+        img: "vase_darker.png",
         quotes: [
             "Nothing ever happened somehow",
             "I think you are cool",
@@ -315,7 +315,7 @@ export default class App extends React.Component<{}, AppState> {
         const textureLoader = new THREE.TextureLoader();
 
         loading++;
-        gltfLoader.load("/arrow.glb", ({scene}) => {
+        gltfLoader.load("arrow.glb", ({scene}) => {
             this.arrowModel = scene.children[0] as THREE.Mesh;
             fixMaterials(this.arrowModel);
             this.onLoadComplete();
@@ -329,6 +329,7 @@ export default class App extends React.Component<{}, AppState> {
                 video.autoplay = true;
                 video.loop = true;
                 video.crossOrigin = "anonymous";
+                video.preload = "auto";
                 video.src = img;
                 video.onloadeddata = () => {
                     this.loadedTextures.set(img, new THREE.VideoTexture(video));
@@ -345,8 +346,8 @@ export default class App extends React.Component<{}, AppState> {
             }
         }
 
-        textureLoader.load("/deelon_darker.png", texture => {
-            this.loadedTextures.set("/deelon_darker.png", texture);
+        textureLoader.load("deelon_darker.png", texture => {
+            this.loadedTextures.set("deelon_darker.png", texture);
             this.onLoadComplete();
         });
 
@@ -392,7 +393,7 @@ export default class App extends React.Component<{}, AppState> {
             let iterations = 0;
             do {
                 const theta = THREE.Math.randFloat(-2 * Math.PI, 2 * Math.PI);
-                const radius = THREE.Math.randFloat(110, 150);
+                const radius = THREE.Math.randFloat(100, 110);
                 const phi = Math.PI / 2;
                 position.setFromSphericalCoords(radius, phi, theta);
                 iterations++;
@@ -444,10 +445,10 @@ export default class App extends React.Component<{}, AppState> {
             };
             if(count === people.length) {
                 newState.length = state.length + 1;
-                const enemy = this.updateList.create(Enemy, tempVec1.set(0, 0, 100), this.loadedTextures.get("/deelon_darker.png") as THREE.Texture, this.player, this.labelDiv as HTMLDivElement, this.nodes, {
+                const enemy = this.updateList.create(Enemy, tempVec1.set(0, 0, 100), this.loadedTextures.get("deelon_darker.png") as THREE.Texture, this.player, this.labelDiv as HTMLDivElement, this.nodes, {
                     quotes: ["", ""],
                     boss: true,
-                    health: 1200,
+                    health: 2000,
                     switchAttacks: true,
                     switchAttackTime: new Range(5, 10),
                     startingAttack: AttackMode.Round,

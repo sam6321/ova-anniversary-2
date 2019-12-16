@@ -376,7 +376,7 @@ export class Enemy extends Update {
 
     private updateDirectAttack(time: number, ) {
         const {player, lastFire, fireDelay} = this;
-        if(time > lastFire + fireDelay / (1 - player.killed / 10)) {
+        if(time > lastFire + fireDelay * (1 - player.killed / 20)) {
             tempVec1
                 .subVectors(player.mesh.position, this.mesh.position)
                 .normalize();
@@ -413,7 +413,7 @@ export class Enemy extends Update {
 
     private updateBurstAttack(time: number) {
         const {mesh, lastFire, fireDelayBurst, player} = this;
-        if(time >= lastFire + fireDelayBurst) {
+        if(time >= lastFire + fireDelayBurst * (1 - player.killed / 20)) {
             if(time > this.burstLastShotFired + this.burstDelayBetweenShots) {
                 tempVec1
                     .set(THREE.Math.randFloat(-1, 1), THREE.Math.randFloat(-1, 1), THREE.Math.randFloat(-1, 1))
@@ -440,8 +440,8 @@ export class Enemy extends Update {
     }
 
     private updateSnipeAttack(time: number) {
-        const {mesh, lastFire, fireDelaySnipe} = this;
-        if(time >= lastFire + fireDelaySnipe) {
+        const {player, lastFire, fireDelaySnipe} = this;
+        if(time >= lastFire + fireDelaySnipe * (1 - player.killed / 30)) {
             // Fire ahead of the player
             const speed = 125;
             tempVec1
@@ -463,7 +463,7 @@ export class Enemy extends Update {
 
     private updateClumpAttack(time: number) {
         const {lastFire, fireDelayClump, player} = this;
-        if(time >= lastFire + fireDelayClump) {
+        if(time >= lastFire + fireDelayClump * (1 - player.killed / 20)) {
 
             const circles: THREE.Sphere[] = [];
             for(let i = 0; i < this.clumpAmount; i++) {
@@ -495,7 +495,8 @@ export class Enemy extends Update {
                 this.createProjectile(circle.center.add(this.mesh.position), tempVec1, {
                     minSpeed: 40 * (1 + player.killed / 20) * (this.boss ? 1.25 : 1),
                     maxSpeed: 60 * (1 + player.killed / 20) * (this.boss ? 1.25 : 1),
-                    destroyable: true
+                    destroyable: true,
+                    canDamagePlayer: true
                 });
             }
 
@@ -508,7 +509,7 @@ export class Enemy extends Update {
 
         if(this.switchAttacks && time > this.nextSwitchAttack) {
             this.attackMode = THREE.Math.randInt(0, AttackMode.Length - 1);
-            this.nextSwitchAttack = time + this.switchAttackTime.random();
+            this.nextSwitchAttack = time + this.switchAttackTime.random() * (this.boss ? 1.25 - (this.health / this.startHealth) : 1);
         }
 
         const d = this.attackMode === AttackMode.Snipe || this.boss ? snipeShootDistance : shootDistance;

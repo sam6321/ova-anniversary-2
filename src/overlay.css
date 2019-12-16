@@ -73,4 +73,5 @@
 .hide-animate {
     transition: opacity 1s ease;
     opacity: 0;
+    user-select: none;
 }
