@@ -9,7 +9,7 @@
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
     "react-scrollbar": "^0.5.6",
-    "three": "^0.110.0"
+    "three": "^0.137.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.11",
